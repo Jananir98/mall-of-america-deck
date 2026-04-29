@@ -1,0 +1,72 @@
+{
+  "deck": "Mall of America — The Partnership Deck (Round 2)",
+  "renderedBetween": "2026-04-28 / 2026-04-29",
+  "notice": "Every primary storytelling surface uses AI-generated assets. No real-world brand logos or copyrighted likenesses used in any prompt. Output is rights-cleared by the underlying generation services.",
+  "tools": {
+    "image": ["Microsoft Bing Image Creator (DALL·E 3)", "Leonardo.ai (Flux Dev)", "Hailuo Image", "ElevenLabs Image (Nano Banana)"],
+    "video": ["Hailuo AI", "Luma Dream Machine", "Kling AI"],
+    "audio": ["Suno v4 (instrumentals)", "Freesound.org (CC0 UI stings)"],
+    "vo": ["ElevenLabs v3 — voice: Clara (Calm, Distinctive, and Narrative)"],
+    "copy": ["Anthropic Claude (live runtime hook in Brand-In-Place flow)"]
+  },
+  "videos": [
+    { "id": "V1", "file": "video/hero-open.mp4", "tool": "Vaulted Concourse Video (cinematic glide-forward)", "purpose": "Splash hero · cinematic open" },
+    { "id": "V2", "file": "video/zone-retail.mp4", "tool": "Hailuo AI", "purpose": "Retail zone atmosphere bed", "prompt": "Slow dolly-in down a luxurious indoor concourse with polished marble floors, soft warm spotlights on flagship storefronts, glowing skylights overhead, anamorphic flares, no logos, no people." },
+    { "id": "V3", "file": "video/zone-luxury.mp4", "tool": "Vaulted Concourse Video", "purpose": "Luxury Wing zone bed", "prompt": "Camera slowly pans down a grand ornate concourse, vaulted ceilings, brushed brass detailing, marble columns, single shaft of golden afternoon light, no people." },
+    { "id": "V4", "file": "video/zone-dining.mp4", "tool": "Vaulted Concourse Video", "purpose": "Dining zone bed", "prompt": "Grand multi-level food court, warm hanging pendant lights, copper kitchen accents, motion-blur silhouettes, amber and ruby tones." },
+    { "id": "V5", "file": "video/zone-nick.mp4", "tool": "Vaulted Concourse Video", "purpose": "Nickelodeon Universe zone bed", "prompt": "A person walks along a pathway beneath a roller coaster, indoor theme park atrium at twilight, neon-lit roller coaster track, glass roof above with streaked sunset, kinetic energy." },
+    { "id": "V6", "file": "video/zone-sealife.mp4", "tool": "Vaulted Concourse Video", "purpose": "Sea Life zone bed", "prompt": "Camera slowly pans down the interior, dreamy underwater lighting, dappled caustics, hushed atmospheric." },
+    { "id": "V7", "file": "video/zone-rotunda.mp4", "tool": "Stock cinematic loop (color-graded · compressed)", "purpose": "Rotunda atmosphere fallback" },
+    { "id": "V8", "file": "video/zone-hotel.mp4", "tool": "Hailuo AI", "purpose": "Hotel & Convention zone bed", "prompt": "Slow dolly across a glass skybridge between a luxury hotel tower and a mall concourse at blue hour, city lights through windows, polished brass handrails, no people." }
+  ],
+  "images": [
+    { "id": "S8", "file": "images/map/master.png", "tool": "Hailuo Image", "purpose": "Property-explorer master map illustration", "prompt": "Stylised top-down architectural illustration of a vast mega-mall complex, gold ink line-art on warm parchment, atmospheric vignette edges, no text labels, painterly luxury cartography." },
+    { "id": "S27", "file": "images/onboarding/role-gate-bg.png", "tool": "Microsoft Bing (DALL·E 3)", "purpose": "Splash background · onboarding hero", "prompt": "Breathtaking wide-angle cinematic aerial shot of a vast futuristic mall exterior at golden hour, copper and amber palette, anamorphic lens." },
+    { "id": "S-extr", "file": "images/onboarding/exterior-mall.png", "tool": "Microsoft Bing (DALL·E 3)", "purpose": "Exterior establishing image" },
+    { "id": "S-retail", "file": "images/zones/retail.png", "tool": "ElevenLabs Image (Nano Banana)", "purpose": "Retail zone hero alt", "prompt": "Retail zone interior with anchor flow at golden hour." },
+    { "id": "S9", "file": "images/brand-in-place/luxury-wing-empty.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Brand-In-Place template — Luxury Wing storefront with intentionally empty signage panel for live logo composite", "prompt": "Photorealistic eye-level view of an empty premium storefront on a luxurious indoor mall concourse, polished marble floors, brass trim, large arched glass facade, soft golden lighting, clean blank signage panel above the entrance left intentionally empty, anamorphic lens, no people, no logos." },
+    { "id": "S10", "file": "images/brand-in-place/rotunda-stage-empty.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Brand-In-Place template — Rotunda activation backdrop", "prompt": "Photorealistic wide shot of a vast indoor rotunda dressed for a brand activation, large blank LED wall stage backdrop centre frame intentionally empty, concentric balconies above with silhouetted onlookers, dramatic stage lighting in warm gold, atmospheric haze." },
+    { "id": "S11", "file": "images/brand-in-place/sealife-portal-empty.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Brand-In-Place template — Sea Life sponsor portal", "prompt": "Photorealistic frontal view of an aquarium attraction entry portal, glowing turquoise tunnel visible through doorway, large blank header panel above entrance left intentionally empty, side-lit signage flanks, families queueing in soft focus background." },
+    { "id": "S21", "file": "images/submodule/events-hero.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Events sub-module hero", "prompt": "Sweeping wide-angle of a packed concert in an indoor rotunda at peak energy, stage lights raking across faces, atmospheric haze, anamorphic lens." },
+    { "id": "S22", "file": "images/submodule/sponsorship-hero.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Sponsorship sub-module hero", "prompt": "Macro detail shot of brushed-brass sponsor signage embedded into mall architecture, soft golden bokeh, luxury detail." },
+    { "id": "S23", "file": "images/submodule/leasing-luxury.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Leasing — Luxury path", "prompt": "Editorial flatlay of a leasing portfolio: floor plan blueprint, swatches of marble and brass, gold pen, on a dark walnut desk, dramatic side lighting." },
+    { "id": "S24", "file": "images/submodule/leasing-fb.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Leasing — F&B path", "prompt": "Warm overhead shot of a restaurant kitchen pass at service, copper pans, golden plate-up, atmospheric steam." },
+    { "id": "S25", "file": "images/submodule/leasing-popup.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Leasing — Pop-up path", "prompt": "Modern minimalist pop-up shop interior with raw plywood fixtures and a single statement light fixture, no logos." },
+    { "id": "S26", "file": "images/submodule/performing-arts.jpg", "tool": "Leonardo.ai (Flux Dev)", "purpose": "Venue — Performing Arts", "prompt": "Wide proscenium theatre interior with red velvet seats, gilt detailing, single spotlight on an empty stage." }
+  ],
+  "audio": [
+    { "id": "M1", "file": "audio/theme.mp3", "tool": "Suno v4", "purpose": "Cinematic theme · hero open", "prompt": "Modern cinematic orchestral score, slow build, deep cello drone, layered hammered dulcimer, distant brass swell, sparse percussion, hopeful but restrained, instrumental." },
+    { "id": "M2", "file": "audio/bed-retail.mp3", "tool": "Suno v4", "purpose": "Retail zone bed", "prompt": "Restrained ambient cinematic, soft synth pad in C major, sparse piano motifs, gallery-like, instrumental." },
+    { "id": "M3", "file": "audio/bed-luxury.mp3", "tool": "Suno v4", "purpose": "Luxury Wing zone bed", "prompt": "Sparse string quartet over deep sub-bass drone, near-silence between phrases, reverent and prestigious, instrumental." },
+    { "id": "M4", "file": "audio/bed-dining.mp3", "tool": "Suno v4", "purpose": "Dining zone bed", "prompt": "Warm mid-tempo organic, upright bass, brushed snare, vibraphone, hushed late-night brasserie, instrumental." },
+    { "id": "M5", "file": "audio/bed-nick.mp3", "tool": "Suno v4", "purpose": "Nickelodeon Universe zone bed", "prompt": "Kinetic synth-pop meets orchestral, playful arpeggios, big driving drums, no vocals, slightly cinematic, instrumental." },
+    { "id": "M6", "file": "audio/bed-sealife.mp3", "tool": "Suno v4", "purpose": "Sea Life zone bed", "prompt": "Underwater ambient, deep granular pads, sparse harp, hydrophone-style low frequencies, dreamy and immersive, instrumental." },
+    { "id": "M7", "file": "audio/bed-rotunda.mp3", "tool": "Suno v4", "purpose": "Rotunda zone bed", "prompt": "Stadium energy build, pulsing kick, soaring synth lead, choir swell, the show is about to start, instrumental." },
+    { "id": "M8", "file": "audio/bed-hotel.mp3", "tool": "Suno v4", "purpose": "Hotel & Convention zone bed", "prompt": "Late-night jazz-meets-electronic, Rhodes piano, brushed drums, soft saxophone in distance, sophisticated, instrumental." },
+    { "id": "M9-1", "file": "audio/sting-zone.wav", "tool": "Freesound.org · CC0", "purpose": "Zone-enter swoosh sting", "credit": "soundflakes — small-swoosh-5 · Freesound 416473" },
+    { "id": "M9-2", "file": "audio/sting-reveal.wav", "tool": "Freesound.org · CC0", "purpose": "Brand-In-Place reveal chime", "credit": "garuda1982 — door-bell-nice-soft-ring · Freesound 553508" },
+    { "id": "M9-3", "file": "audio/sting-cta.ogg", "tool": "Freesound.org · CC0", "purpose": "CTA hover", "credit": "jummit — soft-ui-button-click · Freesound 528561" },
+    { "id": "M9-4", "file": "audio/sting-success.wav", "tool": "Freesound.org · CC0", "purpose": "Success / completion sting", "credit": "akelley6 — foxes-fall · Freesound 825558" },
+    { "id": "M9-5", "file": "audio/sting-cinematic.mp3", "tool": "Freesound.org · CC0", "purpose": "Cinematic transition whoosh", "credit": "rescopicsound — cinematic-designed-sci-fi-whoosh · Freesound 749413" }
+  ],
+  "vo": [
+    { "id": "VO1", "file": "vo/cinematic-mode.mp3", "tool": "ElevenLabs v3", "voice": "Clara — Calm, Distinctive, and Narrative", "purpose": "Cinematic Mode 90s narrated tour", "settings": "Stability 36 · Clarity 75 · Style 38" }
+  ],
+  "runtime": [
+    { "id": "C1", "module": "src/lib/brandCopy.js", "tool": "Anthropic Claude (hook-point)", "purpose": "Live 'Why Mall of America fits [Brand]' 3-paragraph generator inside Brand-In-Place. Currently ships a deterministic local generator that mirrors the API contract — swap the function body for a fetch to /api/why-moa to enable live Claude generation. Prompt locked: 'You write 3-paragraph Why-MOA pitches in the brand's voice. Cite real adjacencies and facts.' Cache the system message — same shape, different brand." }
+  ],
+  "facts": {
+    "audience": "40 million annual visitors",
+    "scale": "5.6 million square feet · 129 acres · 4 floors",
+    "anchors": "Nordstrom · Macy's · Bloomingdale's · Sears (legacy)",
+    "stores": "520+ retail tenants",
+    "hotels": "JW Marriott (14-story) · Radisson Blu",
+    "transit": "MSP Airport across I-494 · Metro Transit Blue Line",
+    "openedOn": "August 11, 1992",
+    "specialMoments": [
+      "Canada Goose Cold Room — only −25°C arctic test room in retail",
+      "Met Stadium home plate plaque — inside Nickelodeon Universe (Killebrew 520ft HR · June 3 1967)",
+      "Huntington Bank Rotunda — permanent stage with broadcast-grade infra"
+    ]
+  }
+}
