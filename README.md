@@ -87,7 +87,7 @@ public/ai/
 | Styling | Tailwind CSS 3 |
 | Animation | Framer Motion 12 |
 | Icons | Lucide React (where used; most icons are inline SVG for sharpness) |
-| Hosting | Vercel (primary) · Netlify mirror |
+| Hosting | Vercel |
 
 No backend. Brand-In-Place runs client-side; the Claude integration ships as a **hook-point** in [`src/lib/brandCopy.js`](src/lib/brandCopy.js) — swap the function body for a fetch to a serverless function and live generation kicks in.
 
@@ -162,11 +162,7 @@ vercel login
 vercel --prod
 ```
 
-[`vercel.json`](vercel.json) ships with long-cache `immutable` headers on `/ai/images/*`, `/ai/video/*`, `/ai/audio/*`, `/hero.mp4`, and `/assets/*`.
-
-### Netlify (mirror)
-
-After `npm run build`, drag `dist/` into [app.netlify.com/drop](https://app.netlify.com/drop). [`netlify.toml`](netlify.toml) ships the same cache headers.
+[`vercel.json`](vercel.json) ships with long-cache `immutable` headers on `/ai/images/*`, `/ai/video/*`, `/ai/audio/*`, `/ai/vo/*`, and `/assets/*`.
 
 ---
 
