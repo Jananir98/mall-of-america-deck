@@ -628,8 +628,3 @@ export const ZONES_BY_ID = Object.fromEntries(ZONES.map((z) => [z.id, z]));
 export function getZone(id) {
   return ZONES_BY_ID[id];
 }
-
-export function nextZone(currentId, modeId) {
-  // Walk the recommended path for the active mode
-  return null; // resolved at call-site since it depends on MODES, kept for symmetry
-}
