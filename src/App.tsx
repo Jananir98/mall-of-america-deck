@@ -10,14 +10,14 @@ import CinematicMode from "./components/cinematic/CinematicMode";
 import SalesRepDashboard from "./components/rep/SalesRepDashboard";
 
 /**
- * View orchestration — the new App.
+ * View orchestration.
  *
  *   splash    → Splash (cinematic open + role gate)
- *   map       → PropertyMap hub
+ *   map       → PropertyMap hub (the persistent backdrop once role is set)
  *   zone      → ZoneOverlay (atmosphere bed + editorial card, mode-driven)
- *   submodule → coming Day 3
- *   brand     → coming Day 3
- *   rep       → coming Day 4
+ *   submodule → SubmoduleRouter (Leasing · Sponsorship · Events · Venue)
+ *   brand     → BrandInPlace (intake → reveal → proposal PDF)
+ *   rep       → SalesRepDashboard (?rep=1 — session heatmap)
  *
  * Map renders permanently in the background once role is set, so when a
  * zone overlay closes the prospect lands back on the map with no flicker.
@@ -43,8 +43,10 @@ function Stage() {
       {/* Splash — top of stack until role chosen */}
       {(view === "splash" || !role) && <Splash />}
 
-      {/* 15-sec emotional arc — auto-plays once after role gate dismisses */}
-      {role && view !== "splash" && !heroArcSeen && <HeroArc />}
+      {/* 15-sec emotional arc — auto-plays once when prospect first lands on
+          the map. Guarded to view==="map" so deep-links into a zone never
+          surface the arc on top of the zone overlay. */}
+      {role && view === "map" && !heroArcSeen && <HeroArc />}
 
       {/* Zone overlay — slides over the map */}
       {view === "zone" && <ZoneOverlay />}

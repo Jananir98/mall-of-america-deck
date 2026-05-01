@@ -6,8 +6,8 @@
 
 ## Live Demo
 
-- **Live URL:** *(to be added on deploy)*
-- **Source:** *(to be added on deploy)*
+- **Live URL:** https://mall-of-america-deck-ruby.vercel.app
+- **Source:** https://github.com/Jananir98/mall-of-america-deck
 - **Write-up:** [`WRITEUP.md`](WRITEUP.md)
 
 ---
