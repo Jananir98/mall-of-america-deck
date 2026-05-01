@@ -16,12 +16,28 @@ html, body, #root {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   overflow: hidden;
   width: 100%;
   height: 100dvh;
   /* iOS dynamic viewport — solves the toolbar-collapse jump */
   height: 100vh;
   height: 100dvh;
+}
+
+/* iOS safe-area utilities — applied to fixed top/bottom chrome so content
+   never sits under the notch / home indicator. */
+.safe-top   { padding-top: max(env(safe-area-inset-top), 0px); }
+.safe-bot   { padding-bottom: max(env(safe-area-inset-bottom), 0px); }
+.safe-left  { padding-left: max(env(safe-area-inset-left), 0px); }
+.safe-right { padding-right: max(env(safe-area-inset-right), 0px); }
+.safe-x { padding-left: max(env(safe-area-inset-left), 0px); padding-right: max(env(safe-area-inset-right), 0px); }
+
+/* iOS Safari zooms the page on input focus when the input font-size is
+   under 16px. Force 16px on every form control. */
+input, textarea, select {
+  font-size: 16px;
 }
 
 #root {

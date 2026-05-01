@@ -32,6 +32,8 @@ export default function BrandComposite({
       <img
         src={imgSrc}
         alt={template.label}
+        loading="lazy"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover"
         onError={() => {
           if (imgSrc !== template.fallback) setImgSrc(template.fallback);

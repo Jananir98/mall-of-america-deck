@@ -39,8 +39,10 @@ export default function Splash() {
         muted
         loop
         playsInline
-        preload="metadata"
-        poster="/ai/images/onboarding/role-gate-bg.png"
+        preload="auto"
+        // @ts-ignore — fetchpriority is valid HTML, not yet in React types
+        fetchpriority="high"
+        poster="/ai/images/onboarding/role-gate-bg.jpg"
         className="absolute inset-0 w-full h-full object-cover"
         src="/ai/video/hero-open.mp4"
       />
@@ -110,7 +112,7 @@ export default function Splash() {
       </div>
 
       {/* Footer mark */}
-      <div className="absolute bottom-4 md:bottom-6 left-0 right-0 px-5 md:px-12 flex justify-between items-center text-[9px] md:text-[10px] tracking-eyebrow text-ink-300 font-mono">
+      <div className="absolute bottom-4 md:bottom-6 left-0 right-0 px-5 md:px-12 flex justify-between items-center text-[9px] md:text-[10px] tracking-eyebrow text-ink-300 font-mono safe-bot safe-x">
         <span>© 2026 MOA</span>
         <span className="hidden sm:inline">PRESS ANY ROLE TO ENTER</span>
         <span className="hidden xs:inline">THE PARTNERSHIP DECK</span>

@@ -58,6 +58,7 @@ export default function ZoneAtmosphere({ zone }) {
         <img
           src={zone.media.poster}
           alt=""
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
         />
       ) : (
@@ -66,6 +67,7 @@ export default function ZoneAtmosphere({ zone }) {
           <img
             src={zone.media.poster}
             alt=""
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <motion.video

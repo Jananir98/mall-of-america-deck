@@ -29,7 +29,7 @@ export default function TopChrome() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-[60] pointer-events-none transition-opacity duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[60] pointer-events-none transition-opacity duration-500 safe-top safe-x ${
         cinematic ? "opacity-0" : "opacity-100"
       }`}
     >

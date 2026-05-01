@@ -29,7 +29,7 @@ const SCENES = [
     sub: "40 million visitors a year. The largest in the Western Hemisphere.",
     video: "/ai/video/hero-open.mp4",
     fallback: "/ai/video/hero-loop.mp4",
-    poster: "/ai/images/onboarding/role-gate-bg.png",
+    poster: "/ai/images/onboarding/role-gate-bg.jpg",
     duration: 5000,
   },
   {

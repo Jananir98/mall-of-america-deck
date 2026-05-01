@@ -76,8 +76,10 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
     <div className="fixed inset-0 z-[80] bg-ink-950 overflow-y-auto zone-scroll">
       {/* Background — luxury wing template, very dimmed */}
       <img
-        src="/ai/images/onboarding/role-gate-bg.png"
+        src="/ai/images/onboarding/role-gate-bg.jpg"
         alt=""
+        loading="lazy"
+        decoding="async"
         className="fixed inset-0 w-full h-full object-cover opacity-15"
       />
       <div className="fixed inset-0 bg-gradient-to-b from-black/65 via-black/80 to-black" />

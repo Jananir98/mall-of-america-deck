@@ -115,6 +115,8 @@ export default function LeasingPaths() {
               <img
                 src={path.image}
                 alt={path.label}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />

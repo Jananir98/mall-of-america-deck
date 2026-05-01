@@ -21,6 +21,8 @@ export default function SubmoduleShell({
       <img
         src={backdrop}
         alt=""
+        loading="lazy"
+        decoding="async"
         className="fixed inset-0 w-full h-full object-cover opacity-25"
       />
       <div className="fixed inset-0 bg-gradient-to-b from-black/85 via-black/85 to-black" />

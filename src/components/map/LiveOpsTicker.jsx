@@ -19,7 +19,7 @@ export default function LiveOpsTicker() {
   const zone = getZone(happening.zone);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-30 pointer-events-none">
+    <div className="fixed bottom-0 left-0 right-0 z-30 pointer-events-none safe-bot safe-x">
       <div className="px-4 sm:px-6 md:px-10 py-2.5 sm:py-3 flex items-center gap-3 sm:gap-6 text-[9px] sm:text-[10px] tracking-eyebrow font-mono border-t border-white/10 bg-black/55 backdrop-blur-sm">
         {/* Live indicator */}
         <div className="flex items-center gap-2 text-accent-gold shrink-0">

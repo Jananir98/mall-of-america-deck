@@ -49,8 +49,11 @@ export default function PropertyMap() {
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 0.5, scale: 1 }}
         transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-        src="/ai/images/map/master.png"
+        src="/ai/images/map/master.jpg"
         alt="Mall of America — property map"
+        decoding="async"
+        // @ts-ignore — fetchpriority is valid HTML
+        fetchpriority="high"
         className="absolute inset-0 w-full h-full object-cover"
         onError={(e) => {
           e.currentTarget.src = "/ai/images/why-property-aerial.jpg";

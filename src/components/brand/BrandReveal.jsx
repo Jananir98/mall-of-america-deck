@@ -63,8 +63,8 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
         muted
         loop
         playsInline
-        preload="metadata"
-        poster="/ai/images/onboarding/role-gate-bg.png"
+        preload="none"
+        poster="/ai/images/onboarding/role-gate-bg.jpg"
         className="fixed inset-0 w-full h-full object-cover opacity-25"
         src="/ai/video/zone-luxury.mp4"
       />
