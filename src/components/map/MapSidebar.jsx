@@ -35,7 +35,7 @@ export default function MapSidebar() {
   }
 
   return (
-    <div className="fixed top-32 right-6 md:right-10 z-40 max-w-[280px]">
+    <div className="fixed top-24 sm:top-28 md:top-32 right-3 sm:right-6 md:right-10 z-40 max-w-[min(280px,calc(100vw-24px))]">
       {!open ? (
         <motion.button
           initial={{ opacity: 0, x: 12 }}
@@ -43,7 +43,7 @@ export default function MapSidebar() {
           transition={{ duration: 0.5, delay: 0.3 }}
           onClick={() => setOpen(true)}
           aria-label="Open session panel"
-          className="ml-auto flex items-center gap-2 px-3 py-2 border border-white/15 bg-black/55 backdrop-blur-sm text-[10px] tracking-eyebrow text-ink-100 hover:text-accent-gold hover:border-accent-gold/40 transition"
+          className="ml-auto flex items-center gap-2 px-3 py-2.5 min-h-[36px] border border-white/15 bg-black/55 backdrop-blur-sm text-[10px] tracking-eyebrow text-ink-100 hover:text-accent-gold hover:border-accent-gold/40 transition"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-accent-gold animate-pulse-soft" />
           SESSION
@@ -58,7 +58,7 @@ export default function MapSidebar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.97 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="glass p-5 w-[280px]"
+            className="glass p-4 sm:p-5 w-full sm:w-[280px] max-h-[70vh] overflow-y-auto"
           >
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] tracking-eyebrow text-accent-gold">
@@ -123,13 +123,13 @@ export default function MapSidebar() {
             <div className="mt-5 pt-5 border-t border-white/10 space-y-2">
               <button
                 onClick={copyShare}
-                className="w-full px-3 py-2 border border-accent-gold/40 text-accent-gold text-[10px] tracking-eyebrow hover:bg-accent-gold/10 transition"
+                className="w-full px-3 py-2.5 min-h-[40px] border border-accent-gold/40 text-accent-gold text-[10px] tracking-eyebrow hover:bg-accent-gold/10 transition"
               >
                 {copied ? "✓ COPIED" : "COPY SHARE LINK"}
               </button>
               <button
                 onClick={openRep}
-                className="w-full px-3 py-2 border border-white/15 text-ink-300 text-[10px] tracking-eyebrow hover:text-accent-gold hover:border-accent-gold/40 transition"
+                className="w-full px-3 py-2.5 min-h-[40px] border border-white/15 text-ink-300 text-[10px] tracking-eyebrow hover:text-accent-gold hover:border-accent-gold/40 transition"
               >
                 OPEN REP DASHBOARD
               </button>

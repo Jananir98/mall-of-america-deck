@@ -50,13 +50,13 @@ export default function Splash() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.65)_85%)]" />
 
       {/* Top corner marks */}
-      <div className="absolute top-7 md:top-9 left-0 right-0 px-7 md:px-12 flex justify-between text-[10px] tracking-eyebrow text-ink-100/70 font-mono">
+      <div className="absolute top-5 md:top-9 left-0 right-0 px-5 md:px-12 flex justify-between text-[9px] md:text-[10px] tracking-eyebrow text-ink-100/70 font-mono">
         <span>BLOOMINGTON · MINNESOTA</span>
         <span className="hidden sm:inline">EST. 1992 · TRIPLE FIVE GROUP</span>
       </div>
 
       {/* Centerpiece */}
-      <div className="relative h-full w-full flex flex-col items-center justify-center px-7 md:px-12">
+      <div className="relative h-full w-full flex flex-col items-center justify-center px-5 sm:px-7 md:px-12">
         <AnimatePresence mode="wait">
           {phase < 2 ? (
             <motion.div
@@ -68,7 +68,7 @@ export default function Splash() {
               className="text-center max-w-5xl"
             >
               <p className="kicker mb-5">The Partnership Deck · 2026</p>
-              <h1 className="font-display font-light tracking-display text-[clamp(2.8rem,8vw,8rem)] leading-[0.95]">
+              <h1 className="font-display font-light tracking-display text-[clamp(2rem,8vw,8rem)] leading-[0.95]">
                 A city
                 <br />
                 <span className="italic text-gradient-gold">under one roof.</span>
@@ -82,7 +82,7 @@ export default function Splash() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.9, delay: 0.1 }}
-                    className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10 max-w-3xl mx-auto"
+                    className="mt-8 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10 max-w-3xl mx-auto"
                   >
                     {[
                       ["32M+", "Annual Visitors"],
@@ -90,11 +90,11 @@ export default function Splash() {
                       ["50", "Restaurants"],
                       ["5.6M", "Sq Ft of Stage"],
                     ].map(([n, l]) => (
-                      <div key={l} className="bg-ink-950/80 backdrop-blur px-4 py-5">
-                        <div className="font-display text-2xl md:text-3xl text-gradient-gold">
+                      <div key={l} className="bg-ink-950/80 backdrop-blur px-3 sm:px-4 py-4 sm:py-5">
+                        <div className="font-display text-xl sm:text-2xl md:text-3xl text-gradient-gold">
                           {n}
                         </div>
-                        <div className="mt-1 text-[10px] tracking-eyebrow text-ink-300">
+                        <div className="mt-1 text-[9px] sm:text-[10px] tracking-eyebrow text-ink-300">
                           {l}
                         </div>
                       </div>
@@ -150,12 +150,12 @@ function RoleGate({ onPick }) {
       className="w-full max-w-6xl text-center"
     >
       <p className="kicker">Choose your lens · the deck rewrites itself</p>
-      <h2 className="mt-4 font-display font-light tracking-display text-[clamp(2rem,5vw,4rem)] leading-[1.05]">
+      <h2 className="mt-4 font-display font-light tracking-display text-[clamp(1.6rem,5vw,4rem)] leading-[1.05]">
         Why are you{" "}
         <span className="italic text-gradient-gold">considering Mall of America?</span>
       </h2>
 
-      <div className="mt-12 grid md:grid-cols-3 gap-[1px] bg-white/10 border border-white/10">
+      <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-[1px] bg-white/10 border border-white/10">
         {tiles.map((t, i) => (
           <motion.button
             key={t.id}
@@ -164,14 +164,14 @@ function RoleGate({ onPick }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 + i * 0.08 }}
             whileHover={{ y: -3 }}
-            className="group relative bg-ink-950/85 backdrop-blur px-7 py-10 text-left overflow-hidden border-0"
+            className="group relative bg-ink-950/85 backdrop-blur px-5 sm:px-6 md:px-7 py-7 sm:py-9 md:py-10 text-left overflow-hidden border-0 min-h-[44px]"
           >
             <div className="text-[10px] tracking-eyebrow text-accent-gold/70 mb-3">
               0{i + 1}
             </div>
-            <div className="font-display text-3xl md:text-4xl">{t.title}</div>
-            <div className="mt-3 text-ink-100/70 text-[15px] leading-relaxed">{t.sub}</div>
-            <div className="mt-8 text-[11px] tracking-eyebrow text-ink-300 group-hover:text-accent-gold transition">
+            <div className="font-display text-2xl sm:text-3xl md:text-4xl">{t.title}</div>
+            <div className="mt-3 text-ink-100/70 text-[14px] md:text-[15px] leading-relaxed">{t.sub}</div>
+            <div className="mt-6 md:mt-8 text-[11px] tracking-eyebrow text-ink-300 group-hover:text-accent-gold transition">
               {t.hint} <span className="ml-1">→</span>
             </div>
             {/* hover glow */}

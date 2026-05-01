@@ -82,8 +82,8 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
       />
       <div className="fixed inset-0 bg-gradient-to-b from-black/65 via-black/80 to-black" />
 
-      <div className="relative min-h-screen px-6 md:px-12 py-24 md:py-28">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+      <div className="relative min-h-screen px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-8 md:gap-14 items-start">
           {/* LEFT — form */}
           <motion.form
             onSubmit={submit}
@@ -93,7 +93,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
             className="md:col-span-7"
           >
             <p className="kicker">The "I need to be here" moment</p>
-            <h2 className="mt-3 font-display font-light tracking-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[1.02]">
+            <h2 className="mt-3 font-display font-light tracking-display text-[clamp(1.6rem,5vw,4.6rem)] leading-[1.02]">
               Imagine{" "}
               <span className="italic text-gradient-gold">
                 {name.trim() || "your brand"}
@@ -101,7 +101,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
               <br />
               inside Mall of America.
             </h2>
-            <p className="mt-5 max-w-2xl text-ink-100/75 text-[15.5px] leading-relaxed">
+            <p className="mt-4 sm:mt-5 max-w-2xl text-ink-100/75 text-[14px] sm:text-[15.5px] leading-relaxed">
               Tell us your brand. We'll render it in three of MOA's flagship
               moments — Luxury Wing storefront, Rotunda activation backdrop,
               Sea Life sponsor portal — with adjacency, footprint, and
@@ -181,7 +181,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
                           setTier(t.id);
                           setTierTouched(true);
                         }}
-                        className={`px-3 py-3 text-[10.5px] tracking-eyebrow text-left transition ${
+                        className={`px-2.5 sm:px-3 py-3 min-h-[44px] text-[9.5px] sm:text-[10.5px] tracking-eyebrow text-left transition ${
                           active
                             ? "bg-accent-gold text-ink-950"
                             : "bg-ink-950/85 text-ink-300 hover:text-accent-gold"
@@ -204,7 +204,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
                 label="Footprint"
                 hint={`${footprint.toLocaleString()} sq ft`}
               >
-                <div className="grid grid-cols-4 gap-[1px] bg-white/10 border border-white/10 mb-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-[1px] bg-white/10 border border-white/10 mb-3">
                   {FOOTPRINT_PRESETS.map((p) => {
                     const active = footprint === p.value;
                     return (
@@ -212,7 +212,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
                         type="button"
                         key={p.value}
                         onClick={() => setFootprint(p.value)}
-                        className={`px-3 py-2.5 text-[10.5px] tracking-eyebrow transition ${
+                        className={`px-2.5 sm:px-3 py-2.5 min-h-[44px] text-[9.5px] sm:text-[10.5px] tracking-eyebrow transition ${
                           active
                             ? "bg-accent-gold text-ink-950"
                             : "bg-ink-950/85 text-ink-300 hover:text-accent-gold"
@@ -236,7 +236,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
 
               {/* Season */}
               <Field label="Target season">
-                <div className="grid grid-cols-4 gap-[1px] bg-white/10 border border-white/10">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-[1px] bg-white/10 border border-white/10">
                   {SEASONS.map((s) => {
                     const active = season === s.id;
                     return (
@@ -244,7 +244,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
                         type="button"
                         key={s.id}
                         onClick={() => setSeason(s.id)}
-                        className={`px-3 py-2.5 text-[10.5px] tracking-eyebrow transition ${
+                        className={`px-2.5 sm:px-3 py-2.5 min-h-[44px] text-[9.5px] sm:text-[10.5px] tracking-eyebrow transition ${
                           active
                             ? "bg-accent-gold text-ink-950"
                             : "bg-ink-950/85 text-ink-300 hover:text-accent-gold"
@@ -273,7 +273,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
               <button
                 type="submit"
                 disabled={!ready}
-                className={`px-7 py-3.5 text-[11px] tracking-eyebrow font-medium transition ${
+                className={`px-6 sm:px-7 py-3.5 min-h-[44px] text-[11px] tracking-eyebrow font-medium transition ${
                   ready
                     ? "bg-accent-gold text-ink-950 hover:bg-[#f4d99a]"
                     : "bg-ink-700 text-ink-500 cursor-not-allowed"
@@ -284,11 +284,11 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="px-5 py-3 border border-white/15 text-[11px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
+                className="px-4 sm:px-5 py-3 min-h-[44px] border border-white/15 text-[11px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
               >
                 CLOSE
               </button>
-              <span className="ml-auto text-[10px] tracking-eyebrow text-ink-500 font-mono">
+              <span className="hidden sm:inline ml-auto text-[10px] tracking-eyebrow text-ink-500 font-mono">
                 ESC TO CANCEL
               </span>
             </div>
@@ -299,7 +299,7 @@ export default function BrandIntake({ onGenerate, onClose, initial }) {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="md:col-span-5 md:sticky md:top-32"
+            className="md:col-span-5 md:sticky md:top-28 lg:top-32"
           >
             <div className="text-[10px] tracking-eyebrow text-accent-gold mb-4">
               LIVE PREVIEW · UPDATES AS YOU TYPE

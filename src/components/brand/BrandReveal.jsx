@@ -70,7 +70,7 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
       />
       <div className="fixed inset-0 bg-gradient-to-b from-black/85 via-black/85 to-black" />
 
-      <div className="relative min-h-screen px-6 md:px-12 py-24 md:py-28">
+      <div className="relative min-h-screen px-4 sm:px-6 md:px-12 py-20 sm:py-24 md:py-28">
         <div className="max-w-7xl mx-auto">
           {/* Headline */}
           <motion.div
@@ -80,7 +80,7 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
             className="text-center max-w-4xl mx-auto"
           >
             <p className="kicker">Brand-In-Place · Composited Live</p>
-            <h2 className="mt-3 font-display font-light tracking-display text-[clamp(2.4rem,6vw,5.4rem)] leading-[1.02]">
+            <h2 className="mt-3 font-display font-light tracking-display text-[clamp(1.7rem,6vw,5.4rem)] leading-[1.02]">
               <span className="italic text-gradient-gold">{brand.name}</span>
               <br />
               inside Mall of America.
@@ -93,7 +93,7 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
           </motion.div>
 
           {/* Three composites */}
-          <div className="mt-14 md:mt-20 grid md:grid-cols-12 gap-6 items-stretch">
+          <div className="mt-10 sm:mt-14 md:mt-20 grid md:grid-cols-12 gap-4 sm:gap-6 items-stretch">
             {BRAND_TEMPLATES.map((tpl, i) => (
               <AnimatePresence key={tpl.id}>
                 {phase > i && (
@@ -130,11 +130,11 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9 }}
-                className="mt-16 md:mt-24 grid md:grid-cols-12 gap-10"
+                className="mt-12 sm:mt-16 md:mt-24 grid md:grid-cols-12 gap-6 md:gap-10"
               >
                 <div className="md:col-span-4">
                   <p className="kicker">Why Mall of America fits</p>
-                  <h3 className="mt-3 font-display text-[clamp(1.8rem,3.5vw,2.6rem)] leading-tight">
+                  <h3 className="mt-3 font-display text-[clamp(1.4rem,3.5vw,2.6rem)] leading-tight">
                     {brand.name}
                   </h3>
                   <p className="mt-4 text-[11px] tracking-eyebrow text-ink-300">
@@ -144,7 +144,7 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
                     {copy.voiceNote}
                   </p>
                 </div>
-                <div className="md:col-span-8 space-y-5 text-ink-100/85 leading-relaxed text-[15.5px] md:text-[16.5px]">
+                <div className="md:col-span-8 space-y-4 sm:space-y-5 text-ink-100/85 leading-relaxed text-[14px] sm:text-[15.5px] md:text-[16.5px]">
                   {[copy.p1, copy.p2, copy.p3].map((p, i) => (
                     <motion.p
                       key={i}
@@ -167,13 +167,13 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="mt-16 grid md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10"
+                className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10"
               >
-                <div className="bg-ink-950/85 backdrop-blur p-6 md:p-7">
+                <div className="bg-ink-950/85 backdrop-blur p-4 sm:p-6 md:p-7 col-span-2 md:col-span-1">
                   <div className="text-[10px] tracking-eyebrow text-accent-gold">
                     YEAR 1 BALLPARK
                   </div>
-                  <div className="mt-2 font-display text-3xl md:text-4xl text-gradient-gold">
+                  <div className="mt-2 font-display text-2xl sm:text-3xl md:text-4xl text-gradient-gold">
                     {formatRange(pricing.range)}
                   </div>
                   <div className="mt-2 text-[11px] tracking-eyebrow text-ink-300">
@@ -194,23 +194,23 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                className="mt-12 flex flex-wrap items-center gap-3"
+                className="mt-8 sm:mt-12 flex flex-wrap items-center gap-2 sm:gap-3"
               >
                 <button
                   onClick={onProposal}
-                  className="px-6 py-3.5 bg-accent-gold text-ink-950 text-[11px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition flex items-center gap-2"
+                  className="px-5 sm:px-6 py-3.5 min-h-[44px] bg-accent-gold text-ink-950 text-[11px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition flex items-center gap-2"
                 >
                   GENERATE PROPOSAL PDF →
                 </button>
                 <button
                   onClick={onEdit}
-                  className="px-5 py-3 border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition"
+                  className="px-4 sm:px-5 py-3 min-h-[44px] border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition"
                 >
                   EDIT INPUTS
                 </button>
                 <button
                   onClick={onClose}
-                  className="px-5 py-3 border border-white/15 text-[11px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
+                  className="px-4 sm:px-5 py-3 min-h-[44px] border border-white/15 text-[11px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
                 >
                   ← BACK TO MAP
                 </button>
@@ -228,7 +228,7 @@ export default function BrandReveal({ brand, onClose, onProposal, onEdit }) {
 
 function Stat({ label, value }) {
   return (
-    <div className="bg-ink-950/85 backdrop-blur p-6 md:p-7">
+    <div className="bg-ink-950/85 backdrop-blur p-4 sm:p-6 md:p-7">
       <div className="text-[10px] tracking-eyebrow text-ink-300">{label.toUpperCase()}</div>
       <div className="mt-2 font-display text-xl md:text-2xl text-ink-50 leading-tight">
         {value}

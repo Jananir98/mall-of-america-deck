@@ -64,37 +64,39 @@ export default function SalesRepDashboard() {
   return (
     <div className="fixed inset-0 z-[95] bg-ink-950 text-ink-50 overflow-y-auto zone-scroll">
       {/* No-print top bar */}
-      <div className="sticky top-0 z-50 bg-ink-950 border-b border-white/10 px-6 md:px-10 py-3 flex items-center justify-between gap-4">
+      <div className="sticky top-0 z-50 bg-ink-950 border-b border-white/10 px-4 sm:px-6 md:px-10 py-3 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <span className="w-2 h-2 rounded-full bg-accent-crimson animate-pulse-soft" />
           <span className="text-[10px] tracking-eyebrow text-accent-gold">
-            SALES-REP DASHBOARD · INTERNAL
+            <span className="hidden sm:inline">SALES-REP DASHBOARD · INTERNAL</span>
+            <span className="sm:hidden">REP DASHBOARD</span>
           </span>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => navigator.clipboard?.writeText(window.location.href)}
-            className="px-4 py-2 border border-white/15 text-[10px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
+            className="px-3 sm:px-4 py-2.5 min-h-[40px] border border-white/15 text-[10px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
           >
-            COPY SHARE LINK
+            <span className="hidden sm:inline">COPY SHARE LINK</span>
+            <span className="sm:hidden">COPY LINK</span>
           </button>
           <button
             onClick={close}
-            className="px-4 py-2 bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition"
+            className="px-3 sm:px-4 py-2.5 min-h-[40px] bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition"
           >
             CLOSE
           </button>
         </div>
       </div>
 
-      <div className="px-6 md:px-12 py-12 md:py-16 max-w-7xl mx-auto">
+      <div className="px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16 max-w-7xl mx-auto">
         <motion.header
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           <p className="kicker">Session report</p>
-          <h2 className="mt-3 font-display font-light tracking-display text-[clamp(2.4rem,5.5vw,5rem)] leading-[1.02]">
+          <h2 className="mt-3 font-display font-light tracking-display text-[clamp(1.6rem,5.5vw,5rem)] leading-[1.02]">
             {brand?.name ? (
               <>
                 {brand.name}'s session at{" "}
@@ -107,7 +109,7 @@ export default function SalesRepDashboard() {
               </>
             )}
           </h2>
-          <p className="mt-5 max-w-2xl text-ink-100/75 text-[15.5px] leading-relaxed">
+          <p className="mt-4 sm:mt-5 max-w-2xl text-ink-100/75 text-[14px] sm:text-[15.5px] leading-relaxed">
             What the prospect actually engaged with in this session. In a
             production build this same data would email to the assigned MOA
             Partnerships rep the moment the prospect closes the tab.
@@ -119,7 +121,7 @@ export default function SalesRepDashboard() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-12 grid sm:grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10"
+          className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10"
         >
           <Stat label="Session length" value={fmtDuration(sessionDuration)} />
           <Stat label="Zones visited" value={`${visited} / ${zones.length}`} />
@@ -132,7 +134,7 @@ export default function SalesRepDashboard() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-12 grid md:grid-cols-12 gap-10"
+          className="mt-8 sm:mt-12 grid md:grid-cols-12 gap-6 md:gap-10"
         >
           <div className="md:col-span-7">
             <div className="text-[10px] tracking-eyebrow text-accent-gold mb-4">
@@ -144,11 +146,11 @@ export default function SalesRepDashboard() {
                 const pct = totalDwell ? (ms / totalDwell) * 100 : 0;
                 const peak = z.id === peakZoneId;
                 return (
-                  <li key={z.id} className="grid grid-cols-12 gap-3 items-center">
-                    <span className="col-span-3 text-[12px] tracking-wide text-ink-100/85">
+                  <li key={z.id} className="grid grid-cols-12 gap-2 sm:gap-3 items-center">
+                    <span className="col-span-4 sm:col-span-3 text-[11px] sm:text-[12px] tracking-wide text-ink-100/85 truncate">
                       {z.label}
                     </span>
-                    <div className="col-span-7 h-5 bg-white/5 relative overflow-hidden">
+                    <div className="col-span-6 sm:col-span-7 h-4 sm:h-5 bg-white/5 relative overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${pct}%` }}
@@ -161,7 +163,7 @@ export default function SalesRepDashboard() {
                         }}
                       />
                     </div>
-                    <span className="col-span-2 text-[10.5px] tracking-eyebrow text-ink-300 font-mono text-right">
+                    <span className="col-span-2 text-[9.5px] sm:text-[10.5px] tracking-eyebrow text-ink-300 font-mono text-right">
                       {fmtDuration(ms)}
                     </span>
                   </li>
@@ -236,8 +238,8 @@ export default function SalesRepDashboard() {
           <div className="text-[10px] tracking-eyebrow text-accent-gold mb-4">
             EVENT LOG · CHRONOLOGICAL
           </div>
-          <div className="border border-white/10 max-h-[420px] overflow-y-auto zone-scroll">
-            <table className="w-full">
+          <div className="border border-white/10 max-h-[420px] overflow-auto zone-scroll">
+            <table className="w-full min-w-[480px]">
               <tbody>
                 {history.length === 0 && (
                   <tr>
@@ -254,13 +256,13 @@ export default function SalesRepDashboard() {
                       key={i}
                       className="border-b border-white/5 hover:bg-white/3"
                     >
-                      <td className="px-4 py-2.5 text-[10.5px] tracking-eyebrow text-ink-500 font-mono w-32">
+                      <td className="px-3 sm:px-4 py-2.5 text-[10px] sm:text-[10.5px] tracking-eyebrow text-ink-500 font-mono w-24 sm:w-32 whitespace-nowrap">
                         {new Date(h.at).toLocaleTimeString()}
                       </td>
-                      <td className="px-4 py-2.5 text-[10.5px] tracking-eyebrow text-accent-gold w-32">
+                      <td className="px-3 sm:px-4 py-2.5 text-[10px] sm:text-[10.5px] tracking-eyebrow text-accent-gold w-28 sm:w-32 whitespace-nowrap">
                         {h.type.replace(/([A-Z])/g, " $1").toUpperCase()}
                       </td>
-                      <td className="px-4 py-2.5 text-[12.5px] text-ink-100">
+                      <td className="px-3 sm:px-4 py-2.5 text-[11.5px] sm:text-[12.5px] text-ink-100">
                         {h.payload ?? "—"}
                       </td>
                     </tr>
@@ -294,11 +296,11 @@ export default function SalesRepDashboard() {
 
 function Stat({ label, value }) {
   return (
-    <div className="bg-ink-950/85 backdrop-blur p-5 md:p-6">
-      <div className="text-[10px] tracking-eyebrow text-ink-300">
+    <div className="bg-ink-950/85 backdrop-blur p-4 sm:p-5 md:p-6">
+      <div className="text-[9px] sm:text-[10px] tracking-eyebrow text-ink-300">
         {label.toUpperCase()}
       </div>
-      <div className="mt-2 font-display text-2xl md:text-3xl text-gradient-gold">
+      <div className="mt-2 font-display text-xl sm:text-2xl md:text-3xl text-gradient-gold">
         {value}
       </div>
     </div>

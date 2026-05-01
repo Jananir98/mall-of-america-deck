@@ -47,7 +47,7 @@ export default function EventsBooking() {
             <button
               key={f.id}
               onClick={() => setFormat(f.id)}
-              className={`px-4 py-2.5 text-[10.5px] tracking-eyebrow transition ${
+              className={`px-3 sm:px-4 py-2.5 min-h-[40px] text-[10px] sm:text-[10.5px] tracking-eyebrow transition ${
                 isActive
                   ? "bg-accent-gold text-ink-950"
                   : "border border-white/15 text-ink-300 hover:text-accent-gold hover:border-accent-gold/40"
@@ -67,7 +67,7 @@ export default function EventsBooking() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.4 }}
-          className="mt-12 grid md:grid-cols-12 gap-10 md:gap-14"
+          className="mt-8 sm:mt-12 grid md:grid-cols-12 gap-8 md:gap-14"
         >
           {/* LEFT — format detail + calendar */}
           <div className="md:col-span-7">
@@ -121,7 +121,7 @@ export default function EventsBooking() {
                     <button
                       key={m.key}
                       onClick={() => setDate(m.key)}
-                      className={`relative px-3 py-3 text-[10.5px] tracking-eyebrow transition ${
+                      className={`relative px-2 sm:px-3 py-3 min-h-[44px] text-[9.5px] sm:text-[10.5px] tracking-eyebrow transition ${
                         sel
                           ? "bg-accent-gold text-ink-950"
                           : `${tone} hover:bg-ink-950/85`
@@ -171,11 +171,11 @@ export default function EventsBooking() {
 
           {/* RIGHT — booking card */}
           <div className="md:col-span-5">
-            <div className="glass p-7 sticky top-32">
+            <div className="glass p-5 sm:p-7 md:sticky md:top-32">
               <div className="text-[10px] tracking-eyebrow text-accent-gold">
                 BOOKING REQUEST
               </div>
-              <h4 className="mt-3 font-display text-2xl leading-tight">
+              <h4 className="mt-3 font-display text-xl sm:text-2xl leading-tight">
                 Hold {date ? calendar.find((c) => c.key === date)?.label : "a date"}.
               </h4>
               <ul className="mt-5 space-y-2 text-[13px] text-ink-100/85">
@@ -195,7 +195,7 @@ export default function EventsBooking() {
               <div className="mt-6 space-y-2">
                 <button
                   disabled={!date}
-                  className={`block w-full px-5 py-3 text-[11px] tracking-eyebrow font-medium transition text-center ${
+                  className={`block w-full px-5 py-3 min-h-[44px] text-[11px] tracking-eyebrow font-medium transition text-center ${
                     date
                       ? "bg-accent-gold text-ink-950 hover:bg-[#f4d99a]"
                       : "bg-ink-700 text-ink-500 cursor-not-allowed"
@@ -205,7 +205,7 @@ export default function EventsBooking() {
                 </button>
                 <a
                   href="mailto:events@mallofamerica.com"
-                  className="block w-full px-5 py-3 border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition text-center"
+                  className="block w-full px-5 py-3 min-h-[44px] border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition text-center"
                 >
                   EMAIL EVENTS DESK
                 </a>
@@ -226,11 +226,11 @@ export default function EventsBooking() {
 
 function Cell({ label, value }) {
   return (
-    <div className="bg-ink-950/85 backdrop-blur p-4 md:p-5">
+    <div className="bg-ink-950/85 backdrop-blur p-3 sm:p-4 md:p-5">
       <div className="text-[10px] tracking-eyebrow text-ink-300">
         {label.toUpperCase()}
       </div>
-      <div className="mt-2 font-display text-base md:text-lg text-ink-50 leading-tight">
+      <div className="mt-2 font-display text-sm sm:text-base md:text-lg text-ink-50 leading-tight">
         {value}
       </div>
     </div>

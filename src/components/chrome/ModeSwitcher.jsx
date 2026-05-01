@@ -25,7 +25,7 @@ export default function ModeSwitcher() {
             role="radio"
             aria-checked={active}
             onClick={() => setMode(m.id)}
-            className={`relative px-4 py-2 text-[10px] tracking-eyebrow transition ${
+            className={`relative px-3 md:px-4 py-2.5 md:py-2 min-h-[36px] text-[9px] sm:text-[10px] tracking-eyebrow transition ${
               active
                 ? "text-ink-950"
                 : "text-ink-100/70 hover:text-accent-gold"

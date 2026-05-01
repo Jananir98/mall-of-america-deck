@@ -102,7 +102,7 @@ export default function CinematicMode() {
           transition={{ duration: 0.5 }}
           className="fixed bottom-0 left-0 right-0 z-[60] pointer-events-none"
         >
-          <div className="px-4 md:px-10 pb-5 md:pb-7">
+          <div className="px-4 sm:px-6 md:px-10 pb-4 sm:pb-5 md:pb-7">
             {/* Chapters — labels only on tablet+, just the active label on mobile */}
             <div className="hidden sm:flex justify-between mb-3 text-[9px] tracking-eyebrow font-mono">
               {SCRIPT.slice(0, -1).map((s) => {
@@ -148,7 +148,7 @@ export default function CinematicMode() {
               </span>
               <button
                 onClick={toggleCinematic}
-                className="pointer-events-auto px-4 py-1.5 border border-accent-gold/50 text-accent-gold bg-black/40 backdrop-blur-sm hover:bg-accent-gold/10 transition"
+                className="pointer-events-auto px-4 py-2 min-h-[36px] border border-accent-gold/50 text-accent-gold bg-black/40 backdrop-blur-sm hover:bg-accent-gold/10 transition"
               >
                 ◼ STOP TOUR
               </button>

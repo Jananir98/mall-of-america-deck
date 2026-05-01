@@ -29,7 +29,7 @@ export default function LeasingPaths() {
             <button
               key={p.id}
               onClick={() => setActive(p.id)}
-              className={`text-left px-5 py-5 transition relative ${
+              className={`text-left px-3 sm:px-5 py-4 sm:py-5 min-h-[44px] transition relative ${
                 isActive
                   ? "bg-accent-gold text-ink-950"
                   : "bg-ink-950/85 text-ink-300 hover:text-accent-gold"
@@ -38,8 +38,8 @@ export default function LeasingPaths() {
               <div className="text-[10px] tracking-eyebrow opacity-80">
                 PATH 0{LEASING_PATHS.indexOf(p) + 1}
               </div>
-              <div className="mt-2 font-display text-xl">{p.label}</div>
-              <div className="mt-1 text-[11px] tracking-eyebrow opacity-80">
+              <div className="mt-1.5 sm:mt-2 font-display text-base sm:text-xl">{p.label}</div>
+              <div className="mt-1 text-[10px] sm:text-[11px] tracking-eyebrow opacity-80">
                 {p.rate.split("·")[0].trim()}
               </div>
             </button>
@@ -55,19 +55,19 @@ export default function LeasingPaths() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.5 }}
-          className="mt-14 grid md:grid-cols-12 gap-10 md:gap-14 items-start"
+          className="mt-10 sm:mt-14 grid md:grid-cols-12 gap-8 md:gap-14 items-start"
         >
           {/* LEFT */}
           <div className="md:col-span-7">
             <div className="text-[10px] tracking-eyebrow text-accent-gold">
               {path.label.toUpperCase()} · THE PITCH
             </div>
-            <p className="mt-4 text-ink-100/85 leading-relaxed text-[16px] md:text-[17px] max-w-2xl">
+            <p className="mt-4 text-ink-100/85 leading-relaxed text-[14px] sm:text-[16px] md:text-[17px] max-w-2xl">
               {path.pitch}
             </p>
 
             {/* Specs grid */}
-            <div className="mt-12 grid sm:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 max-w-3xl">
+            <div className="mt-8 sm:mt-12 grid sm:grid-cols-2 gap-[1px] bg-white/10 border border-white/10 max-w-3xl">
               <Spec label="Rate band" value={path.rate} />
               <Spec label="Footprint" value={path.footprint} />
               <Spec label="Build-out" value={path.buildOut} />
@@ -83,7 +83,7 @@ export default function LeasingPaths() {
             </div>
 
             {/* Timeline */}
-            <div className="mt-12">
+            <div className="mt-8 sm:mt-12">
               <div className="text-[10px] tracking-eyebrow text-accent-gold mb-5">
                 TIMELINE TO SIGNATURE
               </div>
@@ -146,7 +146,7 @@ export default function LeasingPaths() {
               <div className="mt-5 flex gap-2">
                 <a
                   href="mailto:partnerships@mallofamerica.com"
-                  className="flex-1 px-4 py-2.5 bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition text-center"
+                  className="flex-1 px-4 py-3 min-h-[44px] bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition text-center flex items-center justify-center"
                 >
                   TALK TO LEASING →
                 </a>
@@ -161,11 +161,11 @@ export default function LeasingPaths() {
 
 function Spec({ label, value }) {
   return (
-    <div className="bg-ink-950/85 backdrop-blur p-4 md:p-5">
+    <div className="bg-ink-950/85 backdrop-blur p-3 sm:p-4 md:p-5">
       <div className="text-[10px] tracking-eyebrow text-ink-300">
         {label.toUpperCase()}
       </div>
-      <div className="mt-2 font-display text-base md:text-lg text-ink-50 leading-tight">
+      <div className="mt-2 font-display text-sm sm:text-base md:text-lg text-ink-50 leading-tight">
         {value}
       </div>
     </div>

@@ -195,15 +195,15 @@ export default function HeroArc() {
           </AnimatePresence>
 
           {/* Cinematic letterbox bars */}
-          <div className="absolute top-0 left-0 right-0 h-[8vh] bg-black z-20" />
-          <div className="absolute bottom-0 left-0 right-0 h-[8vh] bg-black z-20" />
+          <div className="absolute top-0 left-0 right-0 h-[5vh] md:h-[8vh] bg-black z-20" />
+          <div className="absolute bottom-0 left-0 right-0 h-[5vh] md:h-[8vh] bg-black z-20" />
 
           {/* Atmospheric wash */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/85 pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.55)_85%)] pointer-events-none" />
 
           {/* Headline — centered, fades per scene */}
-          <div className="relative z-10 h-full flex items-center justify-center px-7 md:px-14">
+          <div className="relative z-10 h-full flex items-center justify-center px-5 sm:px-7 md:px-14">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`text-${sceneIdx}`}
@@ -220,12 +220,12 @@ export default function HeroArc() {
                   {String(sceneIdx + 1).padStart(2, "0")} · {scene.label} —{" "}
                   {scene.eyebrow}
                 </p>
-                <h1 className="font-display font-light tracking-display text-[clamp(2.8rem,9vw,9rem)] leading-[0.95]">
+                <h1 className="font-display font-light tracking-display text-[clamp(1.8rem,9vw,9rem)] leading-[0.95]">
                   {scene.title}
                   <br />
                   <span className="italic text-gradient-gold">{scene.accent}</span>
                 </h1>
-                <p className="mt-7 max-w-xl mx-auto text-ink-100/80 text-[15px] md:text-[17px] leading-relaxed">
+                <p className="mt-5 md:mt-7 max-w-xl mx-auto text-ink-100/80 text-[13px] sm:text-[15px] md:text-[17px] leading-relaxed">
                   {scene.sub}
                 </p>
               </motion.div>
@@ -233,7 +233,7 @@ export default function HeroArc() {
           </div>
 
           {/* Top-right SKIP + scene chips */}
-          <div className="absolute top-12 right-7 md:right-12 z-30 flex items-center gap-3 pointer-events-auto">
+          <div className="absolute top-8 sm:top-12 right-4 sm:right-7 md:right-12 z-30 flex items-center gap-3 pointer-events-auto">
             <div className="hidden sm:flex items-center gap-2 text-[9px] tracking-eyebrow font-mono">
               {SCENES.map((s, i) => (
                 <span
@@ -258,14 +258,14 @@ export default function HeroArc() {
                 e.stopPropagation();
                 finish();
               }}
-              className="px-4 py-2 border border-white/20 bg-black/55 backdrop-blur-sm text-[10px] tracking-eyebrow text-ink-100 hover:text-accent-gold hover:border-accent-gold/40 transition"
+              className="px-4 py-2.5 min-h-[40px] border border-white/20 bg-black/55 backdrop-blur-sm text-[10px] tracking-eyebrow text-ink-100 hover:text-accent-gold hover:border-accent-gold/40 transition"
             >
               SKIP →
             </button>
           </div>
 
           {/* Bottom progress bar */}
-          <div className="absolute bottom-12 left-7 md:left-12 right-7 md:right-12 z-30">
+          <div className="absolute bottom-8 sm:bottom-12 left-4 sm:left-7 md:left-12 right-4 sm:right-7 md:right-12 z-30">
             <div className="relative h-[2px] bg-white/15">
               <motion.div
                 className="absolute inset-y-0 left-0 bg-accent-gold"

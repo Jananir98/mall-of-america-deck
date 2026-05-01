@@ -67,8 +67,8 @@ export default function ZoneOverlay() {
         {/* Editorial overlay — scrolls within itself */}
         <div className="absolute inset-0 overflow-y-auto zone-scroll">
           {/* Hero block */}
-          <div className="min-h-screen flex items-end md:items-center pt-32 pb-12 md:pb-20 px-6 md:px-14">
-            <div className="w-full max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
+          <div className="min-h-screen flex items-end md:items-center pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-12 md:pb-20 px-4 sm:px-6 md:px-14">
+            <div className="w-full max-w-7xl mx-auto grid md:grid-cols-12 gap-6 md:gap-10">
               {/* LEFT — story */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -82,21 +82,21 @@ export default function ZoneOverlay() {
                 >
                   ZONE 0{z.order} · {z.kicker.toUpperCase()}
                 </p>
-                <h2 className="mt-4 font-display font-light tracking-display text-[clamp(2.4rem,5.2vw,5rem)] leading-[1.02]">
+                <h2 className="mt-3 sm:mt-4 font-display font-light tracking-display text-[clamp(1.6rem,5.2vw,5rem)] leading-[1.02]">
                   {renderHeadline(z)}
                 </h2>
-                <p className="mt-6 max-w-2xl text-ink-100/80 leading-relaxed text-[16px] md:text-[17px]">
+                <p className="mt-4 sm:mt-6 max-w-2xl text-ink-100/80 leading-relaxed text-[14px] sm:text-[16px] md:text-[17px]">
                   {z.blurb}
                 </p>
 
                 {/* Stats grid */}
-                <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10 max-w-3xl">
+                <div className="mt-7 sm:mt-10 grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/10 border border-white/10 max-w-3xl">
                   {z.stats.map((s) => (
-                    <div key={s.l} className="bg-ink-950/85 backdrop-blur p-4 md:p-5">
-                      <div className="font-display text-2xl md:text-3xl text-gradient-gold">
+                    <div key={s.l} className="bg-ink-950/85 backdrop-blur p-3 sm:p-4 md:p-5">
+                      <div className="font-display text-xl sm:text-2xl md:text-3xl text-gradient-gold">
                         {s.n}
                       </div>
-                      <div className="mt-1 text-[10px] tracking-eyebrow text-ink-300 leading-snug">
+                      <div className="mt-1 text-[9px] sm:text-[10px] tracking-eyebrow text-ink-300 leading-snug">
                         {s.l}
                       </div>
                     </div>
@@ -114,7 +114,7 @@ export default function ZoneOverlay() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="md:col-span-5"
               >
-                <div className="glass p-6 md:p-7">
+                <div className="glass p-5 sm:p-6 md:p-7">
                   <div className="flex items-center justify-between gap-3">
                     <div className="text-[10px] tracking-eyebrow text-accent-gold">
                       VIEWING AS · {activeMode.longLabel.toUpperCase()}
@@ -170,11 +170,11 @@ export default function ZoneOverlay() {
                 </div>
 
                 {/* Quick utility row */}
-                <div className="mt-3 flex items-center gap-2">
+                <div className="mt-3 flex flex-wrap items-center gap-2">
                   <button
                     onClick={() => toggleSave(z.id)}
                     aria-pressed={saved}
-                    className={`flex items-center gap-2 px-3 py-2 text-[10px] tracking-eyebrow border transition ${
+                    className={`flex items-center gap-2 px-3 py-2.5 min-h-[40px] text-[10px] tracking-eyebrow border transition ${
                       saved
                         ? "border-accent-gold text-accent-gold bg-accent-gold/10"
                         : "border-white/15 text-ink-300 hover:text-accent-gold hover:border-accent-gold/40"
@@ -185,14 +185,14 @@ export default function ZoneOverlay() {
                   </button>
                   <button
                     onClick={exitZone}
-                    className="flex items-center gap-2 px-3 py-2 text-[10px] tracking-eyebrow border border-white/15 text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
+                    className="flex items-center gap-2 px-3 py-2.5 min-h-[40px] text-[10px] tracking-eyebrow border border-white/15 text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
                   >
                     ← BACK TO MAP
                   </button>
                   {next && next.id !== z.id && (
                     <button
                       onClick={() => enterZone(next.id)}
-                      className="ml-auto flex items-center gap-2 px-3 py-2 text-[10px] tracking-eyebrow border border-accent-gold/40 text-accent-gold hover:bg-accent-gold/10 transition"
+                      className="sm:ml-auto flex items-center gap-2 px-3 py-2.5 min-h-[40px] text-[10px] tracking-eyebrow border border-accent-gold/40 text-accent-gold hover:bg-accent-gold/10 transition"
                     >
                       NEXT · {next.label.toUpperCase()} →
                     </button>
@@ -204,7 +204,7 @@ export default function ZoneOverlay() {
 
           {/* Stories block — secondary editorial spreads */}
           {z.stories?.length > 0 && (
-            <div className="px-6 md:px-14 pb-32">
+            <div className="px-4 sm:px-6 md:px-14 pb-20 sm:pb-32">
               <div className="w-full max-w-7xl mx-auto">
                 <ZoneStories stories={z.stories} palette={z.palette} />
               </div>
@@ -230,9 +230,9 @@ export default function ZoneOverlay() {
 
 function ZoneCloser({ zone, mode, submoduleId, onSubmodule, onBrand, onExit, onNext, next }) {
   return (
-    <div className="px-6 md:px-14 pb-24">
-      <div className="w-full max-w-7xl mx-auto pt-16 border-t border-white/10">
-        <div className="grid md:grid-cols-12 gap-8 items-end">
+    <div className="px-4 sm:px-6 md:px-14 pb-16 sm:pb-24">
+      <div className="w-full max-w-7xl mx-auto pt-10 sm:pt-16 border-t border-white/10">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-end">
           <div className="md:col-span-7">
             <div
               className="text-[10px] tracking-eyebrow"
@@ -240,7 +240,7 @@ function ZoneCloser({ zone, mode, submoduleId, onSubmodule, onBrand, onExit, onN
             >
               YOUR NEXT MOVE · {mode.longLabel.toUpperCase()}
             </div>
-            <h3 className="mt-3 font-display text-[clamp(1.6rem,3.2vw,2.6rem)] leading-tight max-w-2xl">
+            <h3 className="mt-3 font-display text-[clamp(1.3rem,3.2vw,2.6rem)] leading-tight max-w-2xl">
               {zone.label} is one decision away.{" "}
               <span className="italic text-gradient-gold">Make it concrete.</span>
             </h3>
@@ -249,28 +249,28 @@ function ZoneCloser({ zone, mode, submoduleId, onSubmodule, onBrand, onExit, onN
             {submoduleId && (
               <button
                 onClick={() => onSubmodule(submoduleId)}
-                className="px-5 py-3 bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow hover:bg-[#f4d99a] transition"
+                className="px-4 sm:px-5 py-3 min-h-[44px] bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow hover:bg-[#f4d99a] transition"
               >
                 {mode.primaryCta.toUpperCase()} →
               </button>
             )}
             <button
               onClick={onBrand}
-              className="px-5 py-3 border border-accent-gold/50 text-accent-gold text-[10px] tracking-eyebrow hover:bg-accent-gold/10 transition"
+              className="px-4 sm:px-5 py-3 min-h-[44px] border border-accent-gold/50 text-accent-gold text-[10px] tracking-eyebrow hover:bg-accent-gold/10 transition"
             >
               SEE YOUR BRAND HERE ↗
             </button>
             {next && (
               <button
                 onClick={onNext}
-                className="px-5 py-3 border border-white/15 text-ink-300 text-[10px] tracking-eyebrow hover:text-accent-gold hover:border-accent-gold/40 transition"
+                className="px-4 sm:px-5 py-3 min-h-[44px] border border-white/15 text-ink-300 text-[10px] tracking-eyebrow hover:text-accent-gold hover:border-accent-gold/40 transition"
               >
                 NEXT · {next.label.toUpperCase()} →
               </button>
             )}
             <button
               onClick={onExit}
-              className="px-5 py-3 border border-white/15 text-ink-300 text-[10px] tracking-eyebrow hover:text-accent-gold hover:border-accent-gold/40 transition"
+              className="px-4 sm:px-5 py-3 min-h-[44px] border border-white/15 text-ink-300 text-[10px] tracking-eyebrow hover:text-accent-gold hover:border-accent-gold/40 transition"
             >
               ← MAP
             </button>

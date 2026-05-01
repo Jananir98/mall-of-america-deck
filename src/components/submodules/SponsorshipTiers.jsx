@@ -27,7 +27,7 @@ export default function SponsorshipTiers() {
             <button
               key={t.id}
               onClick={() => setActive(t.id)}
-              className={`text-left px-5 py-5 transition relative ${
+              className={`text-left px-3 sm:px-5 py-4 sm:py-5 min-h-[44px] transition relative ${
                 isActive
                   ? "bg-accent-gold text-ink-950"
                   : "bg-ink-950/85 text-ink-300 hover:text-accent-gold"
@@ -36,8 +36,8 @@ export default function SponsorshipTiers() {
               <div className="text-[10px] tracking-eyebrow opacity-80">
                 TIER 0{SPONSORSHIP_TIERS.length - i}
               </div>
-              <div className="mt-2 font-display text-xl">{t.label}</div>
-              <div className="mt-1 text-[10.5px] tracking-eyebrow opacity-80">
+              <div className="mt-1.5 sm:mt-2 font-display text-base sm:text-xl">{t.label}</div>
+              <div className="mt-1 text-[9.5px] sm:text-[10.5px] tracking-eyebrow opacity-80">
                 {t.investment}
               </div>
             </button>
@@ -53,59 +53,59 @@ export default function SponsorshipTiers() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.5 }}
-          className="mt-14 grid md:grid-cols-12 gap-10 md:gap-14"
+          className="mt-10 sm:mt-14 grid md:grid-cols-12 gap-8 md:gap-14"
         >
           {/* LEFT */}
           <div className="md:col-span-7">
             <div className="text-[10px] tracking-eyebrow text-accent-gold">
               {tier.label.toUpperCase()} TIER
             </div>
-            <h3 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] leading-tight">
+            <h3 className="mt-3 font-display text-[clamp(1.4rem,4vw,3.4rem)] leading-tight">
               {tier.description}
             </h3>
 
             {/* Investment + renewal band */}
-            <div className="mt-10 grid grid-cols-2 gap-[1px] bg-white/10 border border-white/10 max-w-2xl">
-              <div className="bg-ink-950/85 p-5">
+            <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-[1px] bg-white/10 border border-white/10 max-w-2xl">
+              <div className="bg-ink-950/85 p-4 sm:p-5">
                 <div className="text-[10px] tracking-eyebrow text-ink-300">
                   INVESTMENT
                 </div>
-                <div className="mt-2 font-display text-2xl text-gradient-gold">
+                <div className="mt-2 font-display text-xl sm:text-2xl text-gradient-gold">
                   {tier.investment}
                 </div>
               </div>
-              <div className="bg-ink-950/85 p-5">
+              <div className="bg-ink-950/85 p-4 sm:p-5">
                 <div className="text-[10px] tracking-eyebrow text-ink-300">
                   RENEWAL
                 </div>
-                <div className="mt-2 font-display text-base text-ink-50 leading-snug">
+                <div className="mt-2 font-display text-sm sm:text-base text-ink-50 leading-snug">
                   {tier.renewal}
                 </div>
               </div>
             </div>
 
             {/* Inclusions */}
-            <div className="mt-12">
-              <div className="text-[10px] tracking-eyebrow text-accent-gold mb-5">
+            <div className="mt-8 sm:mt-12">
+              <div className="text-[10px] tracking-eyebrow text-accent-gold mb-4 sm:mb-5">
                 WHAT'S INCLUDED
               </div>
               <ul className="space-y-3 max-w-2xl">
                 {tier.includes.map((line, i) => (
                   <li
                     key={i}
-                    className="flex items-baseline gap-4 text-ink-100/85"
+                    className="flex items-baseline gap-3 sm:gap-4 text-ink-100/85"
                   >
-                    <span className="font-mono text-[10px] text-accent-gold w-5">
+                    <span className="font-mono text-[10px] text-accent-gold w-5 shrink-0">
                       0{i + 1}
                     </span>
-                    <span className="text-[15px] leading-relaxed">{line}</span>
+                    <span className="text-[14px] sm:text-[15px] leading-relaxed">{line}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Past examples */}
-            <div className="mt-12">
+            <div className="mt-8 sm:mt-12">
               <div className="text-[10px] tracking-eyebrow text-accent-gold mb-3">
                 PROOF · PAST PARTNERS
               </div>
@@ -124,11 +124,11 @@ export default function SponsorshipTiers() {
 
           {/* RIGHT — call-to-action card */}
           <div className="md:col-span-5">
-            <div className="glass p-7 sticky top-32">
+            <div className="glass p-5 sm:p-7 md:sticky md:top-32">
               <div className="text-[10px] tracking-eyebrow text-accent-gold">
                 NEXT STEP
               </div>
-              <h4 className="mt-3 font-display text-2xl leading-tight">
+              <h4 className="mt-3 font-display text-xl sm:text-2xl leading-tight">
                 {tier.cta}.
               </h4>
               <p className="mt-4 text-[13px] text-ink-100/75 leading-relaxed">
@@ -137,11 +137,11 @@ export default function SponsorshipTiers() {
               <div className="mt-6 space-y-2">
                 <a
                   href="mailto:partnerships@mallofamerica.com"
-                  className="block w-full px-5 py-3 bg-accent-gold text-ink-950 text-[11px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition text-center"
+                  className="block w-full px-5 py-3 min-h-[44px] bg-accent-gold text-ink-950 text-[11px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition text-center"
                 >
                   EMAIL PARTNERSHIPS →
                 </a>
-                <button className="w-full px-5 py-3 border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition">
+                <button className="w-full px-5 py-3 min-h-[44px] border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition">
                   REQUEST A CALL
                 </button>
               </div>

@@ -101,14 +101,14 @@ export default function PropertyMap() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="absolute top-32 left-8 md:left-12 max-w-md pointer-events-none"
+        className="absolute top-24 sm:top-28 md:top-32 left-4 sm:left-8 md:left-12 right-4 sm:right-auto max-w-md pointer-events-none"
       >
         <p className="kicker">The Property · 129 acres · 4 floors</p>
-        <h2 className="mt-3 font-display font-light tracking-display text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]">
+        <h2 className="mt-3 font-display font-light tracking-display text-[clamp(1.5rem,4vw,3.4rem)] leading-[1.05]">
           Choose your zone.<br />
           <span className="italic text-gradient-gold">Drive your own journey.</span>
         </h2>
-        <p className="mt-4 text-ink-100/70 text-sm leading-relaxed max-w-sm">
+        <p className="mt-3 sm:mt-4 text-ink-100/70 text-[13px] sm:text-sm leading-relaxed max-w-sm">
           Seven zones. One destination. Click any node — the deck atmosphere
           and metrics rewrite around your viewing lens (
           <span className="text-accent-gold">{activeMode.label.toUpperCase()}</span>
@@ -194,7 +194,7 @@ export default function PropertyMap() {
                     transition={{ duration: 0.18 }}
                     className="absolute left-7 top-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none z-20"
                   >
-                    <div className="glass px-4 py-3 min-w-[260px] max-w-[320px]">
+                    <div className="glass px-4 py-3 min-w-[220px] sm:min-w-[260px] max-w-[min(320px,calc(100vw-32px))]">
                       <div
                         className="text-[9px] tracking-eyebrow"
                         style={{ color: z.palette.tint }}

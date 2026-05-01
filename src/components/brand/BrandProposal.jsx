@@ -32,20 +32,20 @@ export default function BrandProposal({ brand, onClose }) {
   return (
     <div className="fixed inset-0 z-[90] bg-[#f5f3ec] overflow-y-auto zone-scroll text-ink-950 proposal-doc">
       {/* No-print header */}
-      <div className="sticky top-0 z-50 bg-ink-950 text-ink-50 px-6 md:px-10 py-3 flex items-center justify-between gap-4 no-print border-b border-white/10">
+      <div className="sticky top-0 z-50 bg-ink-950 text-ink-50 px-4 sm:px-6 md:px-10 py-3 flex flex-wrap items-center justify-between gap-3 no-print border-b border-white/10">
         <div className="text-[10px] tracking-eyebrow text-accent-gold">
           PROPOSAL · {brand.name.toUpperCase()} × MALL OF AMERICA
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={print}
-            className="px-4 py-2 bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition"
+            className="px-3 sm:px-4 py-2.5 min-h-[40px] bg-accent-gold text-ink-950 text-[10px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition"
           >
-            DOWNLOAD PDF (PRINT → SAVE AS PDF)
+            DOWNLOAD PDF
           </button>
           <button
             onClick={onClose}
-            className="px-4 py-2 border border-white/15 text-[10px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
+            className="px-3 sm:px-4 py-2.5 min-h-[40px] border border-white/15 text-[10px] tracking-eyebrow text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
           >
             CLOSE
           </button>
@@ -53,7 +53,7 @@ export default function BrandProposal({ brand, onClose }) {
       </div>
 
       {/* COVER */}
-      <section className="proposal-page relative bg-ink-950 text-ink-50 p-12 md:p-20 min-h-screen flex flex-col">
+      <section className="proposal-page relative bg-ink-950 text-ink-50 p-6 sm:p-10 md:p-20 min-h-screen flex flex-col">
         <header className="flex items-start justify-between gap-6">
           <div className="flex items-center gap-3 font-display text-[15px] tracking-tight">
             <span className="w-7 h-7 rounded-sm bg-accent-gold flex items-center justify-center text-ink-950 font-bold text-[12px]">
@@ -78,7 +78,7 @@ export default function BrandProposal({ brand, onClose }) {
         <div className="flex-1 flex items-end pb-10">
           <div>
             <p className="kicker">For</p>
-            <h1 className="mt-3 font-display font-light text-[clamp(3.4rem,9vw,8rem)] leading-[0.95] tracking-display">
+            <h1 className="mt-3 font-display font-light text-[clamp(2.4rem,9vw,8rem)] leading-[0.95] tracking-display">
               {brand.logoUrl ? (
                 <img
                   src={brand.logoUrl}
@@ -88,7 +88,7 @@ export default function BrandProposal({ brand, onClose }) {
               ) : null}
               <span className="italic text-gradient-gold">{brand.name}</span>
             </h1>
-            <p className="mt-8 max-w-3xl text-ink-100/80 text-[18px] leading-relaxed">
+            <p className="mt-6 sm:mt-8 max-w-3xl text-ink-100/80 text-[15px] sm:text-[18px] leading-relaxed">
               A non-binding partnership concept for {brand.name} at Mall of
               America — three flagship moments, footprint and season specs,
               and a Year 1 ballpark range. This document is a starting point
@@ -104,12 +104,12 @@ export default function BrandProposal({ brand, onClose }) {
       </section>
 
       {/* WHY MOA */}
-      <section className="proposal-page bg-[#f5f3ec] p-12 md:p-20 min-h-screen">
+      <section className="proposal-page bg-[#f5f3ec] p-6 sm:p-10 md:p-20 min-h-screen">
         <p className="kicker text-accent-copper">Section 01 · Why this property</p>
-        <h2 className="mt-4 font-display font-light text-5xl md:text-6xl leading-tight text-ink-950">
+        <h2 className="mt-4 font-display font-light text-3xl sm:text-5xl md:text-6xl leading-tight text-ink-950">
           Why Mall of America fits {brand.name}.
         </h2>
-        <div className="mt-10 grid md:grid-cols-12 gap-10">
+        <div className="mt-8 sm:mt-10 grid md:grid-cols-12 gap-6 md:gap-10">
           <div className="md:col-span-4">
             <div className="text-[11px] tracking-eyebrow text-accent-copper">
               TIER
@@ -123,7 +123,7 @@ export default function BrandProposal({ brand, onClose }) {
               </p>
             )}
           </div>
-          <div className="md:col-span-8 space-y-5 text-ink-900 leading-relaxed text-[16.5px] md:text-[17.5px]">
+          <div className="md:col-span-8 space-y-5 text-ink-900 leading-relaxed text-[14px] sm:text-[16.5px] md:text-[17.5px]">
             {copy ? (
               <>
                 <p>{copy.p1}</p>
@@ -138,18 +138,18 @@ export default function BrandProposal({ brand, onClose }) {
       </section>
 
       {/* COMPOSITES */}
-      <section className="proposal-page bg-ink-950 text-ink-50 p-12 md:p-20 min-h-screen">
+      <section className="proposal-page bg-ink-950 text-ink-50 p-6 sm:p-10 md:p-20 min-h-screen">
         <p className="kicker">Section 02 · Three flagship moments</p>
-        <h2 className="mt-4 font-display font-light text-5xl md:text-6xl leading-tight">
+        <h2 className="mt-4 font-display font-light text-3xl sm:text-5xl md:text-6xl leading-tight">
           {brand.name},{" "}
           <span className="italic text-gradient-gold">in three rooms.</span>
         </h2>
-        <p className="mt-6 max-w-3xl text-ink-100/75 text-[15.5px] leading-relaxed">
+        <p className="mt-5 sm:mt-6 max-w-3xl text-ink-100/75 text-[14px] sm:text-[15.5px] leading-relaxed">
           Composited in-place using MOA's three signature placements. Final
           renders would be produced with the in-house creative team using
           your master brand assets.
         </p>
-        <div className="mt-12 grid md:grid-cols-12 gap-6">
+        <div className="mt-8 sm:mt-12 grid md:grid-cols-12 gap-6">
           {BRAND_TEMPLATES.map((tpl, i) => (
             <div
               key={tpl.id}
@@ -169,14 +169,14 @@ export default function BrandProposal({ brand, onClose }) {
       </section>
 
       {/* PRICING */}
-      <section className="proposal-page bg-[#f5f3ec] p-12 md:p-20 min-h-screen">
+      <section className="proposal-page bg-[#f5f3ec] p-6 sm:p-10 md:p-20 min-h-screen">
         <p className="kicker text-accent-copper">Section 03 · Year 1 ballpark</p>
-        <h2 className="mt-4 font-display font-light text-5xl md:text-6xl leading-tight text-ink-950">
+        <h2 className="mt-4 font-display font-light text-3xl sm:text-5xl md:text-6xl leading-tight text-ink-950">
           The numbers.{" "}
           <span className="italic">Starting point, not a contract.</span>
         </h2>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
+        <div className="mt-8 sm:mt-12 grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           <Card title="Year 1 range" big={formatRange(pricing.range)} sub={`${formatUSD(pricing.monthly)} / mo baseline`} />
           <Card title="Footprint" big={`${brand.footprint.toLocaleString()} sq ft`} sub="Concourse placement" />
           <Card title="Target" big={brand.season} sub={brand.season === "Q4" ? "Holiday peak (+40% baseline)" : "Standard quarter"} />
@@ -209,22 +209,22 @@ export default function BrandProposal({ brand, onClose }) {
       </section>
 
       {/* NEXT STEPS */}
-      <section className="proposal-page bg-ink-950 text-ink-50 p-12 md:p-20 min-h-screen flex flex-col">
+      <section className="proposal-page bg-ink-950 text-ink-50 p-6 sm:p-10 md:p-20 min-h-screen flex flex-col">
         <div>
           <p className="kicker">Section 04 · Next</p>
-          <h2 className="mt-4 font-display font-light text-5xl md:text-6xl leading-tight">
+          <h2 className="mt-4 font-display font-light text-3xl sm:text-5xl md:text-6xl leading-tight">
             Three steps to{" "}
             <span className="italic text-gradient-gold">a signed letter of intent.</span>
           </h2>
         </div>
 
-        <ol className="mt-14 grid md:grid-cols-3 gap-[1px] bg-white/10 border border-white/10">
+        <ol className="mt-10 sm:mt-14 grid sm:grid-cols-2 md:grid-cols-3 gap-[1px] bg-white/10 border border-white/10">
           {[
             ["01", "30-min discovery call", "Walk through this proposal with MOA Partnerships. Footprint, season, adjacency confirmed."],
             ["02", "On-site walkthrough", "Property tour with the leasing or sponsorship team. CAD floorplans + sightlines reviewed."],
             ["03", "Letter of intent", "Term sheet within 10 business days of walkthrough. Signing window: 14 days."],
           ].map(([n, t, b]) => (
-            <li key={n} className="bg-ink-950/85 p-7">
+            <li key={n} className="bg-ink-950/85 p-5 sm:p-7">
               <div className="font-mono text-[10px] tracking-eyebrow text-accent-gold">
                 STEP {n}
               </div>
@@ -236,7 +236,7 @@ export default function BrandProposal({ brand, onClose }) {
           ))}
         </ol>
 
-        <div className="mt-auto pt-16 grid md:grid-cols-2 gap-10 items-end">
+        <div className="mt-auto pt-10 sm:pt-16 grid md:grid-cols-2 gap-6 sm:gap-10 items-end">
           <div>
             <div className="text-[10px] tracking-eyebrow text-accent-gold">
               CONTACT
@@ -266,7 +266,7 @@ export default function BrandProposal({ brand, onClose }) {
 
 function Card({ title, big, sub }) {
   return (
-    <div className="bg-ink-950 text-ink-50 p-7">
+    <div className="bg-ink-950 text-ink-50 p-5 sm:p-7">
       <div className="text-[10px] tracking-eyebrow text-accent-gold">
         {title.toUpperCase()}
       </div>

@@ -33,14 +33,14 @@ export default function TopChrome() {
         cinematic ? "opacity-0" : "opacity-100"
       }`}
     >
-      <div className="flex items-start justify-between px-6 md:px-10 py-5">
+      <div className="flex items-start justify-between px-4 sm:px-6 md:px-10 py-3 sm:py-5 gap-3">
         {/* Brand mark */}
         <button
           onClick={() => exitZone()}
-          className="pointer-events-auto flex items-center gap-3 font-display text-[15px] tracking-tight text-ink-50 hover:opacity-80 transition group"
+          className="pointer-events-auto flex items-center gap-2 sm:gap-3 font-display text-[13px] sm:text-[15px] tracking-tight text-ink-50 hover:opacity-80 transition group min-w-0"
           aria-label="Return to property map"
         >
-          <span className="w-7 h-7 rounded-sm bg-accent-gold flex items-center justify-center text-ink-950 font-bold text-[12px] shadow-[0_0_18px_rgba(217,178,111,0.35)] group-hover:shadow-[0_0_28px_rgba(217,178,111,0.55)] transition">
+          <span className="shrink-0 w-7 h-7 rounded-sm bg-accent-gold flex items-center justify-center text-ink-950 font-bold text-[12px] shadow-[0_0_18px_rgba(217,178,111,0.35)] group-hover:shadow-[0_0_28px_rgba(217,178,111,0.55)] transition">
             M
           </span>
           <span className="hidden sm:flex flex-col leading-tight">
@@ -66,11 +66,11 @@ export default function TopChrome() {
         )}
 
         {/* Utility cluster */}
-        <div className="pointer-events-auto flex items-center gap-3">
+        <div className="pointer-events-auto flex items-center gap-2 sm:gap-3 shrink-0">
           {role && (
             <button
               onClick={openBrand}
-              className="hidden md:flex items-center gap-2 px-4 py-2 border border-accent-gold/50 bg-accent-gold/10 backdrop-blur-sm text-[10px] tracking-eyebrow text-accent-gold hover:bg-accent-gold hover:text-ink-950 transition"
+              className="hidden md:flex items-center gap-2 px-4 py-2.5 min-h-[40px] border border-accent-gold/50 bg-accent-gold/10 backdrop-blur-sm text-[10px] tracking-eyebrow text-accent-gold hover:bg-accent-gold hover:text-ink-950 transition"
               aria-label="Open Brand-In-Place"
             >
               <span>SEE YOUR BRAND HERE</span>
@@ -80,7 +80,7 @@ export default function TopChrome() {
           <button
             onClick={toggleMute}
             aria-label={muted ? "Unmute deck audio" : "Mute deck audio"}
-            className="w-9 h-9 flex items-center justify-center border border-white/15 bg-black/40 backdrop-blur-sm text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
+            className="w-10 h-10 sm:w-9 sm:h-9 flex items-center justify-center border border-white/15 bg-black/40 backdrop-blur-sm text-ink-300 hover:text-accent-gold hover:border-accent-gold/40 transition"
           >
             {muted ? <IconMuted /> : <IconUnmuted />}
           </button>
@@ -101,7 +101,7 @@ export default function TopChrome() {
 
       {/* Mode kicker — small text under top bar; on mobile this row hosts the mode switcher */}
       {role && view !== "splash" && (
-        <div className="px-6 md:px-10 -mt-1 flex items-center gap-3 text-[10px] tracking-eyebrow text-ink-300">
+        <div className="px-4 sm:px-6 md:px-10 -mt-1 flex items-center gap-3 text-[10px] tracking-eyebrow text-ink-300 flex-wrap">
           <span className="hidden sm:block w-6 h-[1px] bg-accent-gold/70" />
           <span className="hidden sm:block text-ink-100/70">
             VIEWING AS · <span className="text-accent-gold">{activeMode.longLabel.toUpperCase()}</span>
