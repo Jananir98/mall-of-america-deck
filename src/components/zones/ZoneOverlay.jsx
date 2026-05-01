@@ -135,9 +135,9 @@ export default function ZoneOverlay() {
 
                   <ul className="mt-5 divide-y divide-white/8">
                     {overlay.rows.map(([k, v]) => (
-                      <li key={k} className="py-2.5 flex justify-between gap-6 text-[13.5px]">
-                        <span className="text-ink-300 tracking-wide">{k}</span>
-                        <span className="text-ink-100 text-right">{v}</span>
+                      <li key={k} className="py-2.5 flex justify-between gap-3 sm:gap-6 text-[12.5px] sm:text-[13.5px]">
+                        <span className="text-ink-300 tracking-wide shrink-0">{k}</span>
+                        <span className="text-ink-100 text-right break-words min-w-0">{v}</span>
                       </li>
                     ))}
                   </ul>
@@ -155,14 +155,14 @@ export default function ZoneOverlay() {
                     {submoduleForMode && (
                       <button
                         onClick={() => openSubmodule(submoduleForMode)}
-                        className="flex-1 min-w-[160px] px-4 py-3 bg-accent-gold text-ink-950 text-[11px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition flex items-center justify-between gap-2"
+                        className="flex-1 basis-full sm:basis-0 sm:min-w-[160px] px-4 py-3 min-h-[44px] bg-accent-gold text-ink-950 text-[11px] tracking-eyebrow font-medium hover:bg-[#f4d99a] transition flex items-center justify-between gap-2"
                       >
                         {overlay.cta}
                       </button>
                     )}
                     <button
                       onClick={openBrand}
-                      className="flex-1 min-w-[160px] px-4 py-3 border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition flex items-center justify-between gap-2"
+                      className="flex-1 basis-full sm:basis-0 sm:min-w-[160px] px-4 py-3 min-h-[44px] border border-accent-gold/50 text-accent-gold text-[11px] tracking-eyebrow hover:bg-accent-gold/10 transition flex items-center justify-between gap-2"
                     >
                       SEE YOUR BRAND HERE ↗
                     </button>

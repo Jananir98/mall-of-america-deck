@@ -18,12 +18,21 @@ html, body, #root {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   width: 100%;
+  max-width: 100vw;
   height: 100dvh;
   /* iOS dynamic viewport — solves the toolbar-collapse jump */
   height: 100vh;
   height: 100dvh;
+}
+
+/* Guard against any descendant pushing the page wider than the viewport.
+   Clipping at the body level catches stray min-w-* or whitespace-nowrap
+   elements before they create a horizontal scrollbar. */
+body {
+  overscroll-behavior-x: none;
 }
 
 /* iOS safe-area utilities — applied to fixed top/bottom chrome so content

@@ -7,6 +7,9 @@ import { useDeck } from "../../hooks/useDeck";
  * Switching mode reskins overlays, recommended path, and CTAs across every
  * zone — without changing any zone content. The "is this a sales tool?"
  * proof point lives here.
+ *
+ * On narrow phones the third mode ("Event Producer") truncates to "Event"
+ * via the cta short label so the three pills + START OVER fit one row.
  */
 export default function ModeSwitcher() {
   const { modes, mode, setMode } = useDeck();
@@ -25,7 +28,7 @@ export default function ModeSwitcher() {
             role="radio"
             aria-checked={active}
             onClick={() => setMode(m.id)}
-            className={`relative px-3 md:px-4 py-2.5 md:py-2 min-h-[36px] text-[9px] sm:text-[10px] tracking-eyebrow transition ${
+            className={`relative px-2.5 sm:px-3 md:px-4 py-2 md:py-2 min-h-[34px] text-[9px] sm:text-[10px] tracking-eyebrow transition ${
               active
                 ? "text-ink-950"
                 : "text-ink-100/70 hover:text-accent-gold"
@@ -38,9 +41,10 @@ export default function ModeSwitcher() {
                 transition={{ type: "spring", stiffness: 380, damping: 32 }}
               />
             )}
-            <span className="relative z-10 flex items-center gap-2">
-              <span aria-hidden>{m.icon}</span>
-              {m.label.toUpperCase()}
+            <span className="relative z-10 flex items-center gap-1.5 sm:gap-2">
+              <span aria-hidden className="hidden sm:inline">{m.icon}</span>
+              <span className="sm:hidden">{m.label.split(" ")[0].toUpperCase()}</span>
+              <span className="hidden sm:inline">{m.label.toUpperCase()}</span>
             </span>
           </button>
         );
